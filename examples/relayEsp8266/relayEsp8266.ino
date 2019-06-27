@@ -56,9 +56,9 @@ void setup(void){
 
 void loop(void){
   adapter->update();
-  bool acceso = ledOn.getValue().boolean;
-  if (acceso != lastOn) {
-    if (acceso) { 
+  bool access = ledOn.getValue().boolean;
+  if (access != lastOn) {
+    if (access) { 
       esp8266.write(relON, sizeof(relON));
       delay(10);
       esp8266.write(relON, sizeof(relON));
@@ -69,5 +69,5 @@ void loop(void){
       esp8266.write(relOFF, sizeof(relOFF));
     }
   }
-  lastOn = acceso;
+  lastOn = access;
 }
